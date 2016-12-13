@@ -11,25 +11,19 @@
 <body>
     <div id="sidebar">
         <h3>Выберите лес для просмотра его деревьев:</h3>
-        <a href="" data-select="1" class="forest_select">Лес 1</a>
-        <a href="" data-select="2" class="forest_select">Лес 2</a>
-        <a href="" data-select="3" class="forest_select">Лес 3</a>
-        <a href="" data-select="4" class="forest_select">Лес 4</a>
+        <div class="sidebar__menu"></div>
     </div>
     <div id="main">
         <h1 id="title">Сажаем лес</h1>
-        <select name="tree" id="tree">
-            <option value="1">Дуб</option>
-            <option value="2">Береза</option>
-            <option value="3">Тополь</option>
-            <option value="4">Сосна</option>
-        </select>
-        <select name="forest" id="forest">
-            <option value="1">Лес 1</option>
-            <option value="2">Лес 2</option>
-            <option value="3">Лес 3</option>
-            <option value="4">Лес 4</option>    
-        </select>
+        <a href="" class="toggle__button">Нажмите для добавления леса или дерева</a>
+        <div id="add__object">
+            <input type="text" placeholder="Введите название леса" id="forest1">
+            <button class="add__inner__item" data-f=1>Добавить лес</button>    
+            <input type="text" placeholder="Введите название дерева" id="tree1">
+            <button class="add__inner__item" data-f=2 >Добавить дерево</button>
+        </div>
+        <select name="tree" id="tree"></select>
+        <select name="forest" id="forest"></select>
         <button id="plant">Посадить дерево</button>
         <div id="info">
             <h3>Деревья в лесах</h3>
