@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Дек 12 2016 г., 22:35
+-- Время создания: Дек 13 2016 г., 20:51
 -- Версия сервера: 5.5.48
 -- Версия PHP: 5.6.19
 
@@ -29,16 +29,16 @@ SET time_zone = "+00:00";
 CREATE TABLE IF NOT EXISTS `forest` (
   `id` int(11) NOT NULL,
   `forest_name` varchar(20) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `forest`
 --
 
 INSERT INTO `forest` (`id`, `forest_name`) VALUES
-(1, 'Хвойный'),
-(2, 'Смешанный'),
-(3, 'Тропический');
+(2, ' Тропический'),
+(3, ' Смешанный'),
+(4, ' Сосновый');
 
 -- --------------------------------------------------------
 
@@ -50,20 +50,22 @@ CREATE TABLE IF NOT EXISTS `forest_tree` (
   `id` int(11) NOT NULL,
   `forest_id` int(11) NOT NULL,
   `tree_id` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `forest_tree`
 --
 
 INSERT INTO `forest_tree` (`id`, `forest_id`, `tree_id`) VALUES
-(1, 1, 0),
-(2, 1, 1),
-(4, 1, 2),
-(5, 2, 3),
-(6, 2, 4),
+(3, 2, 4),
+(4, 3, 7),
+(5, 3, 8),
+(6, 3, 6),
 (7, 3, 5),
-(8, 3, 6);
+(8, 4, 10),
+(9, 4, 11),
+(11, 2, 3),
+(12, 2, 2);
 
 -- --------------------------------------------------------
 
@@ -74,19 +76,24 @@ INSERT INTO `forest_tree` (`id`, `forest_id`, `tree_id`) VALUES
 CREATE TABLE IF NOT EXISTS `tree` (
   `id` int(11) NOT NULL,
   `tree_name` varchar(20) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `tree`
 --
 
 INSERT INTO `tree` (`id`, `tree_name`) VALUES
-(1, 'Кедр'),
-(2, 'Сосна'),
-(3, 'Береза'),
-(4, 'Ива'),
-(5, 'Магнолия'),
-(6, 'Фикус');
+(1, 'Клен'),
+(2, ' Пальма'),
+(3, ' Фикус'),
+(4, ' Бамбук'),
+(5, ' Тополь'),
+(6, ' Рябина'),
+(7, ' Дуб'),
+(8, ' Осина'),
+(9, ' Кедр'),
+(10, ' Ель'),
+(11, ' Туя');
 
 --
 -- Индексы сохранённых таблиц
@@ -118,17 +125,17 @@ ALTER TABLE `tree`
 -- AUTO_INCREMENT для таблицы `forest`
 --
 ALTER TABLE `forest`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT для таблицы `forest_tree`
 --
 ALTER TABLE `forest_tree`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT для таблицы `tree`
 --
 ALTER TABLE `tree`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

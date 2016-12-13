@@ -14,16 +14,7 @@ switch($action){
         $tree = $_POST['tree'];
         $stmt->execute();
         break;
-        
-    case "addForest":
-        $sql = "INSERT INTO `forest` (`id`, `forest_name`) VALUES (NULL, :forest);";
-        $stmt = $pdo->prepare($sql);
-        $stmt->bindParam(':forest', $forest);
-
-        $forest = $_POST['forest'];
-        $stmt->execute();
-        break;
-        
+            
     case "addTree":
         $sql = "INSERT INTO `tree` (`id`, `tree_name`) VALUES (NULL, :tree);";
         $stmt = $pdo->prepare($sql);
@@ -60,7 +51,7 @@ switch($action){
         }
 
         echo "</table>";
-        echo "<a href='/'>Назад</a>";
+        echo "<a href='/' class='inner__back'>Назад</a>";
         break;
         
     
